@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block navbar %}
+<div class="topnav">
+  		<a   href="/home/">Home</a>
+      <a   href="/item/">Popular Items</a>
+    <a  href="/about/">About</a>
+    <a href="/sell_item_view/"> Sell Item </a>
+    <a href="/top_seller_view/"> Top Sellers </a>
+</div>
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="items_list_1">
+    <ul>
+    
+    <h4>Best Sellers</h4>
+    {% for ele in sellers%}
+      <li>
+      <img src="{%static 'images/head.jpg' %}"/>
+      <h3>{{ ele.firstname }} {{ ele.lastname }}</h3>
+      <h6>{{ ele.emailaddress }}</h6>
+      <h6>Rates: {{ ele.rates}}</h6>
+      <form class="" method="POST" action="{% url 'top_seller_pages' ele.sellerid %}" >
+        {% csrf_token %}
+        <button class="view_seller_btn">
+            View this Seller
+        </button>
+      </form>
+      </li>
+    {% endfor%}
+    </ul>
+  </div>
+
+
+
+{% endblock %}

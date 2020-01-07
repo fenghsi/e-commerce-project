@@ -1,0 +1,97 @@
+{% load static %}
+</!DOCTYPE html>
+<html>
+<head>
+	<title>E-commerce</title>
+	<link rel="stylesheet" href="{% static 'css/homepages.css' %}">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+
+	
+    
+
+</head>
+<body>
+
+<div class = "top-nav-bar">
+	
+	<div class="search-box">
+		<img src="{% static 'images/logo.png' %}" class="logo">
+		<div class="dropdown">
+  			<button class="dropbtn"><p>All</p></button>
+  			<div class="dropdown-content">
+    		<a href="{% url 'item_search_view_by_category' 'Electronical' %}">Electronical</a>
+    		<a href="{% url 'item_search_view_by_category' 'Skin_care' %}">Skin care</a>
+   		 	<a href="{% url 'item_search_view_by_category' 'Food' %}">Food</a>
+   		 	<a href="{% url 'item_search_view_by_category' 'Daily' %}">Daily</a>
+   		 	<a href="{% url 'item_search_view_by_category' 'Drink' %}">Drink</a>
+   		 	<a href="{% url 'item_search_view_by_category' 'other' %}">other</a>
+  			</div>
+		</div>
+		
+		<form method="POST" action="/item_search/" id="newitemform" >
+			{% csrf_token %}
+			<input  name="search_text" type="text" class="form-control">
+		</form>
+		
+		<span  class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+	</div>
+	<div class="menu-bar">
+		<ul>
+			<li><a href="/cart/">cart</li>
+			<li><a href="/Order_view/">order</li>
+			<li><a href="/login/">Logout</li>
+		</ul>
+	</div>
+</div>
+<section class="header">
+	{% block navbar %}
+	{% endblock %}
+</section>
+
+
+{% block content %}
+	
+
+{% endblock %}
+
+
+
+
+	
+<script>
+function jump_to_proceed() {
+  window.location='/Proceed_to_check_out/';
+}
+</script>
+<script>
+function jump_to_confirm() {
+  window.location='/Comfirmation_order/';
+}
+</script>
+<script>
+if(document.getElementById("item_in_shop").getElementsByTagName("div").length==0){
+	document.getElementById("shoppincart_check_but").style.visibility = "hidden";
+}
+else{
+	document.getElementById("shoppincart_check_but").style.visibility = "visible";
+}
+
+	
+</script>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+

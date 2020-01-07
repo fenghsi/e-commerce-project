@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block navbar %}
+<div class="topnav">
+  		<a   href="/home/">Home</a>
+      <a   href="/item/">Popular Items</a>
+    <a  href="/about/">About</a>
+    <a href="/sell_item_view/"> Sell Item </a>
+    <a href="/top_seller_view/"> Top Sellers </a>
+</div>
+{% endblock %}
+
+{% block content %}
+	<div class="single_item_page">
+		<h1>{{ item.name }}</h1>
+		<h4>Price: ${{ item.price}}</h4>
+
+		<img src="{%static item.image %}"/>
+		<form method="POST" action="{% url 'add_to_cart_detail' item.itemid  %}">
+			{% csrf_token %}
+			<button class="btn_1222">Add to Cart</button>
+		</form>
+		<h6>Description: </h6>
+		<p>{{ item.description}}</p>
+	</div>
+
+	<div class="review_list">
+		<ul>
+		<h4>Reviews</h4>
+		{% for ele in reviews%}
+			<li>
+			{%for user in users%}
+				{% if ele.userid.userid == user.userid %}
+					
+					<p>{{user.lastname}} {{user.firstname}}</p>
+					<p>Rates: {{ele.rates}}</p>
+					<p>Description: {{ele.description}}</p>
+					
+				{% endif %}
+			{% endfor%}
+			</li>
+		{% endfor%}
+		</ul>
+	</div>
+	
+{% endblock %}

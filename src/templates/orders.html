@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block navbar %}
+<div class="topnav">
+  		<a   href="/home/">Home</a>
+      <a   href="/item/">Popular Items</a>
+    <a  href="/about/">About</a>
+    <a href="/sell_item_view/"> Sell Item </a>
+    <a href="/top_seller_view/"> Top Sellers </a>
+</div>
+{% endblock %}
+
+
+{% block content %}
+  <div class="allorders">
+    <div>
+      <h3>Your Orders</h3>
+    </div>
+	{%for od in order %}
+    <div class="order">
+    <div class="order_details">
+    <p>Order Date: {{od.dates}}</p>
+    <a  href="{% url 'Order_details_view' od.orderid  %}">Order_Details</a>
+    </div>
+    {%for oditem in orderitem %}
+      <div class="orderitems">
+      {% if oditem.orderid.orderid == od.orderid %}
+        <div class="orderitem_image">
+        {% for item in items%}
+          {% if oditem.itemid.itemid == item.itemid %}
+            <img src="{%static item.image %}"alt="" style="width:auto px;height:130"px;/>
+          {% endif %}
+        {% endfor %}
+       </div>
+       <div class="orderitem_name">
+         <div>
+         <h4>{{ oditem.name}}</h4>
+         </div>
+         <div>
+         <h6>Price: ${{ oditem.price }}</h6>
+         </div>
+         <div>
+          <h6>Quantity: {{ oditem.quantity }}</h6>
+         </div>
+         <div>
+           <h6 class="trackingnum">Tracking Number : {{ oditem.trackingnum }}</h6>
+         </div>
+       </div>
+        <div class="return_rate_div">
+           <form class="rate_inorder" method="POST" action="{% url 'rate_item' oditem.itemid.itemid  %}">
+              {% csrf_token %}
+              {% for rev in review%}
+                {% if rev.itemid.itemid == oditem.itemid.itemid %}
+                  <button class="rate_inorder_btn">Rate this item</button>
+                {% endif %}
+              {% endfor %}
+
+            </form>
+            <form class="return_inorder" method="POST" action="{% url 'return_item' oditem.itemid.itemid oditem.orderid.orderid  %}">
+              {% csrf_token %}
+            
+                  <button class="return_this_item_but">Return the item</button>
+                  
+
+            </form>
+        </div>
+      {% endif %}
+      </div>
+        
+    {% endfor %}
+   </div>
+  {% endfor %}
+  </div>
+
+{% endblock %}

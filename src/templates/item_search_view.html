@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block navbar %}
+<div class="topnav">
+  		<a   href="/home/">Home</a>
+      <a  href="/item/">Popular Items</a>
+      <a  href="/about/">About</a>
+      <a href="/sell_item_view/"> Sell Item </a>
+      <a href="/top_seller_view/"> Top Sellers </a>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="result_tag">
+<h5>Result for {{ search }}...... There is/are {{ num }} item(s) in total......</h5>
+</div>
+<div class="items_list">
+  	<ul>
+    {% if obj.0 != null %}
+  	   {%for my_sub_item in obj %}
+  		  <li>
+     	    <img src="{%static my_sub_item.image %}"/>
+      		<h3>{{ my_sub_item.name }}</h3>
+      		<p>Description: {{my_sub_item.description}}</p>
+          <h4>Price: ${{ my_sub_item.price }} </h4>
+          <p>Sold: {{ my_sub_item.soldnum  }}   Rates: {{ my_sub_item.rates  }}</p>
+          <a  href="{% url 'Item_details_view' my_sub_item.itemid %}">Details</a>
+          <a class="add_to_cart" href="{% url 'add_to_cart2' my_sub_item.itemid %}">Add to Cart</a>
+    	</li>
+	   {% endfor %}
+   
+     {% else %}
+
+        <h1 class="not_found_result">Result Not Found.......<h1>
+
+     {% endif %}
+  	</ul>
+</div>
+{% endblock %}

@@ -1,0 +1,1077 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+body{
+    background-color: white;
+    font-family: sans-serif;
+}
+
+.top-nav-bar{
+
+    height: 57px;
+    top: 0;
+    position: sticky;
+    background: #fff;
+    margin-bottom: 20px;
+    border-bottom: 3px solid black;
+    z-index: 2;
+}
+.logo{
+    height: 40px;
+    margin: 5px 10px;
+}
+.form-control
+{
+    margin-top: 9px;
+    margin-left: 30px;
+    border: 1 px solid black !important;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    box-shadow: none !important;
+    width: 200px;
+
+}
+.input-group-text{
+    margin-top: 9px;
+    margin-bottom: 1px;
+    max-height:  38px;
+    margin-left: 6px;
+    background: black !important;
+    border: 1px solid black !important;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+    border-top-right-radius: 25px !important;
+    border-bottom-right-radius: 25px !important;
+    cursor:  pointer;
+
+}
+.search-box{
+    display: inline-flex;
+    width: 60%;
+
+}
+
+.fa-search{
+    color: white;
+
+}
+
+.menu-bar{
+    width:  40%;
+    height:  57px;
+    float:  right;
+
+}
+
+.menu-bar ul{
+    display: inline-flex;
+    float:right;
+}
+
+.menu-bar ul li{
+    border-left: 1px solid #fff;
+    list-style-type: none;
+    padding: 15px 35px;
+    text-align: center;
+    background-color: black;
+    cursor: pointer;
+
+}
+.menu-bar ul li a{
+    font-size 16px;
+    color: white;
+    font-weight: bold;
+    columns: #fff;
+    text-decoration: none;
+}
+
+#newitemform{
+    width: 70%;
+    border-bottom-left-radius: 0px;
+
+}
+
+/*--------------------------side-menu------------------------------------*/
+.header{
+    padding-top: 0;
+}
+.topnav {
+  background-color: black;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+
+
+
+
+/*--------------------------item-list------------------------------------*/
+
+
+
+.items_list {
+  margin: 20px;
+
+  width: 100%;
+}
+ 
+.items_list ul {
+  list-style-type: none;
+  width: 100%;
+
+}
+ 
+.items_list h3 {
+  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+}
+ 
+.items_list li img {
+  float: left;
+  margin: 15px;
+  width: 266px;
+  height: 168px;
+}
+ 
+.items_list li p {
+  font: 200 12px/1.5 Georgia, Times New Roman, serif;
+}
+ 
+.items_list ul li {
+  padding: 10px;
+  overflow: auto;
+  width: 80%%;
+  background-color: white;
+  border: solid 4px white;
+    border-bottom: 0;
+  position: relative;
+}
+ 
+.items_list li:hover {
+  background: #eee;
+  cursor: pointer;
+}
+
+
+
+.result_tag{
+    background-color: gray;
+}
+
+.not_found_result{
+
+    font: 200 80px/1.5 Georgia, Times New Roman, serif;
+
+}
+
+
+.add_to_cart{
+  
+  position: absolute;
+  bottom: 30px;
+  right: 50px;
+  background-color: black;
+  color: white;
+  width: 100px;
+  float: right ;
+  height: 30px;
+  text-align: center;
+}
+
+
+.shopping-carts {
+  
+  background: #FFFFFF;
+  box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  border-top:  1px solid #E1E8EE;
+  border-bottom:  1px solid #E1E8EE;
+  margin: 0 auto;
+  width: 80%;
+}
+
+
+.title {
+  position: relative;
+  height: 60px;
+  border-bottom: 1px solid #E1E8EE;
+  padding: 20px 30px;
+  color: #5E6977;
+  font-size: 18px;
+  font-weight: 400;
+  display: inline-flex;
+
+}
+.title_p{
+  position: relative;
+  left:68.5% ;
+}
+
+ 
+.item {
+  padding: 20px 30px;
+  padding-top: 10px;
+  height: 120px;
+  display: flex;
+  border-color: red;
+  margin-top:20px;
+}
+ 
+
+.buttons {
+  position: relative;
+  padding-top: 30px;
+  margin-right: 60px;
+}
+.delete-btn,
+.like-btn {
+  display: inline-block;
+  Cursor: pointer;
+}
+.delete-btn {
+  width: 18px;
+  height: 17px;
+  background: url(&quot;delete-icn.svg&quot;) no-repeat center;
+}
+ 
+.like-btn {
+  position: absolute;
+  top: 9px;
+  left: 15px;
+  background: url('twitter-heart.png');
+  width: 60px;
+  height: 60px;
+  background-size: 2900%;
+  background-repeat: no-repeat;
+}
+
+.image {
+  position: relative;
+  left: 10px;
+  margin-right: 50px;
+}
+ 
+
+.description {
+  position: absolute;
+  right:  50%;
+  padding-top: 10px;
+  margin-right: 60px;
+  width: 115px;
+}
+ 
+.description span {
+  display: block;
+  font-size: 14px;
+  color: #43484D;
+  font-weight: 400;
+}
+ 
+.description span:first-child {
+  margin-bottom: 5px;
+}
+.description span:last-child {
+  font-weight: 300;
+  margin-top: 8px;
+  color: #86939E;
+}
+
+.quantity {
+  position: absolute;
+  right: 400px;
+  padding-top: 20px;
+  margin-right: 60px;
+  float: right;
+}
+.quantity input {
+  -webkit-appearance: none;
+  border: none;
+  text-align: center;
+  width: 30px;
+  font-size: 16px;
+  color: #43484D;
+  font-weight: 300;
+}
+ 
+
+.minus-btn img {
+  margin-bottom: 3px;
+}
+.plus-btn img {
+  margin-top: 2px;
+}
+ 
+button:focus,
+input:focus {
+  outline:0;
+}
+
+.total-price {
+  position: absolute;
+  right: 18%;
+  width: 150px;
+  padding-top: 27px;
+  text-align: center;
+  font-size: 16px;
+  color: #43484D;
+  font-weight: 300;
+  float: right;
+}
+
+@media (max-width: 800px) {
+  .shopping-cart {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  .item {
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .image img {
+    width: 50%;
+  }
+  .image,
+  .quantity,
+  .description {
+    width: 100%;
+    text-align: center;
+    margin: 6px 0;
+  }
+  .buttons {
+    margin-right: 20px;
+  }
+}
+/*--------------------------item-list------------------------------------*/
+.plus-btn{
+  
+}
+.fa-plus{
+
+  
+}
+.fa-minus{
+
+  color: red;
+}
+
+
+.check_out_div{
+  position: relative;
+  float: right;
+  border-color: red;
+}
+
+.Check_out{
+  float: right;
+  text-align: center;
+  border-color:gray;
+  position: relative;
+  right: 100px;
+  padding-bottom: :20%;
+  background-color: #FFD700;
+  border-radius: 10px;
+  color: gray;
+  width: 200px;
+  height: 50px
+
+}
+
+
+
+/*--------------------------item-list------------------------------------*/
+
+
+
+
+
+.row_1 {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25_1 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50_1 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75_1 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25_1,
+.col-50_1,
+.col-75_1 {
+  padding: 0 16px;
+}
+
+.container_1 {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+.col-50_1 input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.col-50_1 label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn_12 {
+
+  float: top;
+  text-align: center;
+  border-color:gray;
+  position: relative;
+  left: 25%;
+  padding-bottom: :20%;
+  background-color: #FFD700;
+  border-radius: 10px;
+  color: gray;
+  width: 38%;
+  height: 50px;
+  
+}
+
+
+
+span.price_1 {
+  float: right;
+  color: grey;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+/*---------------------------------orders-----------------------------------*/
+
+
+
+
+
+
+
+
+.allorders{
+  background: #FFFFFF;
+  box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  border-top:  1px solid #E1E8EE;
+  border-bottom:  1px solid #E1E8EE;
+  margin: 0 auto;
+  width: 80%;
+
+}
+
+.order{
+  background: #FFFFFF;
+  overflow: hidden;
+  box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  border-top:  1px solid #E1E8EE;
+  border-bottom:  1px solid #E1E8EE;
+  margin: 0 auto;
+  width: 80%;
+  margin-top: 40px;
+
+  
+}
+
+.orderitems{
+  
+  margin-top: 2px;
+  
+
+}
+
+.order_details{
+  color: gray;
+  box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  border-top:  1px solid #E1E8EE;
+  border-bottom:  1px solid #E1E8EE;
+  margin: 5px auto;
+  width: 100%;
+
+
+}
+
+
+.order_details a{
+  position: relative;
+  left: 85%;
+  bottom: 62%;
+}
+.order_details p{
+  position: relative;
+  
+}
+
+.orderitem_image{
+  display: inline-flex;
+  float: left;
+
+
+}
+
+
+
+.orderitem_name{
+  position: absolute;
+  float: right;
+  left: 35%;
+}
+
+.orderitem_name div h6{
+
+}
+
+
+
+.trackingnum{
+  float: right;
+  margin-bottom: 50px;
+}
+
+
+.orderitem_details_but{
+  
+  position: absolute;
+  left: 70%;
+
+}
+
+
+
+
+
+
+
+/*---------------------------------item detail----------------------------------*/
+
+
+
+
+
+
+
+
+.single_item_page{
+ }
+
+
+
+
+.single_item_page h1{
+  position: relative;
+  left: 50px;
+  top: 20px;
+}
+
+.single_item_page img{
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  height: 500px;
+  
+}
+
+
+.single_item_page h6{
+  position: relative;
+  left: 50px;
+
+}
+
+.single_item_page h4{
+  position: relative;
+  left: 50px;
+  top: 30px;
+
+}
+
+
+
+.single_item_page p{
+  position: relative;
+  top:10px;
+  left: 50px;
+
+}
+
+.add_to_cart_1{
+
+  background-color: black;
+  color: white;
+  width: 100px;
+  float: right ;
+  height: 30px;
+  text-align: center;
+
+}
+
+
+
+/*---------------------------------------------------------*/
+
+
+
+
+
+.order_details_info{
+  display: inline-flex;
+  background: #FFFFFF;
+  box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  border-top:  1px solid #E1E8EE;
+  border-bottom:  1px solid #E1E8EE;
+  margin: 50px auto;
+  width: 80%;
+}
+
+
+.order_details_info_shippaddress{
+ position: relative; 
+ left: 0%;
+ margin: 10px ;
+}
+
+
+.order_details_info_payments{
+ position: relative; 
+ left: 0%;
+ margin: 10px ;
+
+}
+.order_details_info_payments i{
+ 
+}
+
+.order_details_info_summary{
+
+ position: relative; 
+ left: 0%;
+ margin: 10px ;
+
+
+}
+
+
+
+.order_details_info_summary div{
+
+
+}
+
+
+
+.order_details_info_summary_title{
+  position: relative;
+  top: 5%;
+  left: : 5%;
+}
+
+
+
+
+.order_details_info_summary_all{
+    position: relative;
+    left: 70%;
+    bottom: 10%;
+}
+
+
+
+
+
+
+
+
+/*---------------seller pages    -----------------*/
+
+
+.error_in_post_item{
+  color: red;
+  padding: 20px;
+}
+
+.return_rate_div{
+  float: right;
+  margin-right:120px ; 
+}
+.rate_inorder{
+ 
+  padding-bottom: 10%;
+  margin-top: 1%;
+  width: 200%;
+
+}
+.return_inorder{
+  padding-bottom:  10%;
+  margin-top: 1%;
+  width: 200%;
+}
+
+
+.rate_inorder_btn{
+  
+  width: 70%;
+  height: 5%;
+}
+.rate_inorder_btn:hover {background-color: #3e8e41}
+
+.rate_inorder_btn:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+
+.Rating_title{
+  margin-bottom: 5%;
+  margin-left: 4%;
+}
+
+.rateing_part_item{
+  margin-top: 10%;
+}
+
+.submit_item_rate{
+  display: inline-flex;
+  width: 50%;
+  margin-bottom: 50px;
+}
+.select_rate_box{
+
+    display: inline-flex;
+    width: 30%;
+}
+
+.rate_this_item_but{
+ 
+  text-align: center;
+  border-color:gray;
+  position: relative;
+  left: 10%;
+  padding-bottom: :20%;
+  background-color: #FFD700;
+  border-radius: 10px;
+  color: gray;
+  width: 30%;
+  height: 50px;
+  
+
+}
+.return_this_item_but{
+  
+  width: 70%;
+  height: 5%;
+  
+
+}
+.return_this_item_but:hover {background-color: red}
+
+.return_this_item_but:active {
+  background-color: white;
+  box-shadow: 0 5px white;
+  transform: translateY(4px);
+}
+
+.submit_item_rate p{
+  font-size: 30px;
+  margin-left: 10%;
+  width: 30%;
+  float: right;
+}
+
+
+.form_item_rate{
+  width: 100%;
+
+}
+
+
+
+
+/*--------------review item deatil----------------*/
+
+
+
+
+
+.reviews_initem_details div p{
+  display: inline-flex;
+}
+
+
+
+
+.review_list {
+  margin: 70px;
+  width: 90%;
+
+
+}
+ 
+.review_list ul {
+  list-style-type: none;
+ 
+  width: 100%;
+
+}
+ 
+.review_list h3 {
+  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+}
+ 
+.review_list li img {
+  float: left;
+  margin: 0 15px 0 0;
+}
+ 
+.review_list li p {
+  font: 200 12px/1.5 Georgia, Times New Roman, serif;
+}
+ 
+.review_list ul li {
+  padding: 10px;
+  overflow: auto;
+  width: 100%;
+  background-color: #FFF8DC;
+  border: solid 4px white;
+    border-bottom: 0;
+  position: relative;
+}
+ 
+.review_list li:hover {
+  background: #eee;
+  cursor: pointer;
+}
+
+
+/*-----------------------*/
+
+
+.items_list_1 {
+  margin: 20px;
+  width: 100%;
+
+
+}
+ 
+.items_list_1 ul {
+  list-style-type: none;
+  width: 100%;
+
+}
+ 
+.items_list_1 h3 {
+  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+}
+ 
+.items_list_1 li img {
+  float: left;
+  width: 266px;
+  height: 168px;
+  margin-right: 10px;
+  
+}
+ 
+.items_list_1 li p {
+  font: 200 12px/1.5 Georgia, Times New Roman, serif;
+}
+ 
+.items_list_1 ul li {
+  padding: 10px;
+  overflow: auto;
+  width: 100%;
+  background-color: #FFEBCD;
+  border: solid 4px white;
+    border-bottom: 0;
+  position: relative;
+}
+ 
+.items_list_1 li:hover {
+  background: #eee;
+  cursor: pointer;
+}
+
+
+
+
+
+.btn_1222{
+  position: relative;
+  left: 79%;
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: gold;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  width: 300px;
+
+}
+
+
+.btn_1222:hover {background-color: #3e8e41}
+
+.btn_1222:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+/*----------------drop dwon menu----------*/
+
+
+.dropbtn {
+  background-color: black;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  width: 50px;
+  height: 37px;
+  border-radius: 10px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px; 
+  text-align: top;
+ 
+  
+}
+.dropbtn p{
+  position: relative;
+  bottom: 10px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  left: 40px;
+  top: 9px;
+  width: 50px;
+  height: 30px;
+
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block navbar %}
+<div class="topnav">
+  		<a   href="/home/">Home</a>
+      <a   href="/item/">Popular Items</a>
+    <a  href="/about/">About</a>
+    <a href="/sell_item_view/"> Sell Item </a>
+    <a href="/top_seller_view/"> Top Sellers </a>
+</div>
+{% endblock %}
+
+{% block content %}
+	<div class="order_details_info">
+		<div class="order_details_info_shippaddress">
+			<h4>Shipping Address</h4>
+			<h6>{{ order.shipaddress }} </h6>
+		</div>
+	</div>
+	<div class="order_details_info">
+		<div class="order_details_info_payments">
+			<h4>Payments method</h4>
+			<i class="fa fa-cc-visa" style="color:navy;">****{{ payment}}</i>
+			
+		</div>
+	</div>
+	<div class="order_details_info">
+		<div class="order_details_info_summary">
+			<div  class="order_details_info_summary_title"><h4>Order Summary</h4></div>
+			<div class="order_details_info_summary_all">
+			<p>Item(s) Subtotal: ${{order.totalprice }}</p>
+			<p>Total before tax: ${{ order.totalprice }}</p>
+			<p>Estimated tax to be collected: ${{ taxes }}</p>
+			<p>Grand Total: ${{ aftertaxes }}</p>
+			</div>
+		</div>
+	</div>
+
+	{%for od in orderss %}
+	{% if od == order%}
+    <div class="order">
+    <div class="order_details">
+    <p>Order Date: {{od.dates}}</p>
+    </div>
+    {%for oditem in orderitem %}
+      <div class="orderitems">
+      {% if oditem.orderid.orderid == od.orderid %}
+        <div class="orderitem_image">
+        {% for item in items%}
+          {% if oditem.itemid.itemid == item.itemid %}
+            <img src="{%static item.image %}"alt="" style="width:auto px;height:130"px;/>
+          {% endif %}
+        {% endfor %}
+       </div>
+       <div class="orderitem_name">
+         <div>
+         <h4>{{ oditem.name}}</h4>
+         </div>
+         <div>
+         <h6>Price: ${{ oditem.price }}</h6>
+         </div>
+         <div>
+          <h6>Quantity: {{ oditem.quantity }}</h6>
+         </div>
+         <div>
+           <h6 class="trackingnum">Tracking Number : {{ oditem.trackingnum }}</h6>
+         </div>
+       </div>
+    
+       
+
+      {% endif %}
+      </div>
+        
+    {% endfor %}
+   </div>
+    {% endif %}
+  {% endfor %}
+	
+		
+
+{% endblock %}

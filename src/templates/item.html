@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block navbar %}
+<div class="topnav">
+  		<a   href="/home/">Home</a>
+      <a  class="active" href="/item/">Popular Items</a>
+    <a  href="/about/">About</a>
+    <a href="/sell_item_view/"> Sell Item </a>
+    <a href="/top_seller_view/"> Top Sellers </a>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="items_list">
+  	<ul>
+  	{%for my_sub_item in obj %}
+  		<li>
+
+     	    <img src="{%static my_sub_item.image %}"/>
+      		<h3>{{ my_sub_item.name }}</h3>
+      		<p>	Description: {{my_sub_item.description}}</p>
+          <h5>Price: ${{ my_sub_item.price }}</h5>
+          <p>Sold: {{ my_sub_item.soldnum  }}    Rates: {{ my_sub_item.rates  }}</p>
+          <a href="{% url 'Item_details_view' my_sub_item.itemid %}">Details</a>
+          <a class="add_to_cart" href="{% url 'add_to_cart' my_sub_item.itemid  %}">Add to Cart</a>
+
+    	</li>
+	{% endfor %}
+  	</ul>
+</div>
+
+ 
+  
+ 
+  <!-- Product #3 -->
+  
+  </div>
+</div>
+{% endblock %}
+
+
+
+
+

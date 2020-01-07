@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Seller register</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+
+			<div class="wrap-login100 p-t-30 p-b-50">
+				<span class="login100-form-title p-b-41">
+					Seller Registration
+				</span>
+				
+				<form method="POST" class="login100-form validate-form p-b-33 p-t-5" action="/thank_seller_register/" autocomplete="off">
+					{% csrf_token %}
+					<div class="wrap-input100 validate-input" data-validate = "Enter First Name">
+						<input class="input100" type="text" name="seller_FirstName_reg" placeholder="First Name">
+						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Enter Last Name">
+						<input class="input100" type="text" name="seller_LastName_reg" placeholder="Last Name">
+						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
+					</div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Enter">
+						<input class="input100" type="email" name="seller_Email_reg" placeholder="Email" >
+						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
+					</div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Enter Password">
+						<input class="input100" type="password" name="seller_Password_reg" placeholder="Password">
+						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate="Enter Password">
+						<input class="input100" type="password" name="seller_re_Password_reg" placeholder="Re-Enter Password">
+						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
+					</div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Enter Address Line 1">
+						<input class="input100" type="text" name="seller_store" placeholder="Store Name">
+						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
+					</div>
+
+                    
+
+					<div class="container-login100-form-btn m-t-32">
+						<button class="login100-form-btn">
+							Register
+						</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+
+	
+
+
+</body>
+</html>

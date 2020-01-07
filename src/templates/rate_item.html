@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block navbar %}
+<div class="topnav">
+  		<a   href="/home/">Home</a>
+      <a   href="/item/">Popular Items</a>
+    <a  href="/about/">About</a>
+    <a href="/sell_item_view/"> Sell Item </a>
+    <a href="/top_seller_view/"> Top Sellers </a>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/main_seller.css' %}">
+	<div class="single_item_page">
+		<h1>{{ item.name }}</h1>
+		<h4>Price: ${{ item.price}}</h4>
+		<img src="{%static item.image %}"/>
+		<h6>Description: </h6>
+		<p>{{ item.description}}</p>
+	</div>
+
+
+	<div class="rateing_part_item">
+		
+		
+	
+	<h1 class="Rating_title">Rating:</h1>
+
+		
+		
+	<form class="form_item_rate" method="POST" action="{% url 'rate_item_finsih' item.itemid %}" >
+		{% csrf_token %}
+		<div class="submit_item_rate">
+		<p>Select rates: </p>
+		<select  class="select_rate_box" name="rate_item_num">
+  		<option value=5>5 (Awesome)</option>
+  		<option value=4>4 (Very Good)</option>
+  		<option value=3>3 (Good)</option>
+  		<option value=2>2 (so so)</option>
+  		<option value=1>1 (bad) </option>
+		</select>
+		
+		
+
+			<button class="rate_this_item_but">
+				submit
+			</button>
+		</div >
+		
+		<div class="wrap-input100 validate-input" >
+				<textarea class="input100" name="rate_item_des" placeholder="Comment.."></textarea>
+				<span class="focus-input100"></span>
+		</div>
+	</form>
+
+
+	</div>
+
+
+
+
+
+
+
+  
+{% endblock %}

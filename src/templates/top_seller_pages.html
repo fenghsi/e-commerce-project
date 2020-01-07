@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block navbar %}
+<div class="topnav">
+  		<a   href="/home/">Home</a>
+      <a   href="/item/">Popular Items</a>
+    <a  href="/about/">About</a>
+    <a href="/sell_item_view/"> Sell Item </a>
+    <a href="/top_seller_view/"> Top Sellers </a>
+</div>
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="single_item_page">
+    <h3>{{ seller.firstname }} {{ seller.lastname }}</h3>
+  
+    <p>{{ seller.emailaddress }}</p>
+    <p>Rates: {{ seller.rates}}</p>
+    <img src="{%static 'images/head.jpg' %}"/>
+    
+  </div>
+
+
+      
+      
+
+  <div class="items_list">
+    <ul>
+    <h4>Items sold: </h4>
+    {% for ele in items%}
+      <li>
+      <img src="{%static ele.image %}"/>
+  
+          <h3>{{ ele.name }}</h3>
+          <p> Description: {{ele.description}}</p>
+          <h5>Price: ${{ ele.price }}</h5>
+          <p>Sold: {{ ele.soldnum  }}    Rates: {{ ele.rates  }}</p>
+          <a href="{% url 'Item_details_view' ele.itemid %}">Details</a>
+          <a class="add_to_cart" href="{% url 'add_to_cart_detail' ele.itemid  %}">Add to Cart</a>
+        
+      </li>
+    {% endfor%}
+    </ul>
+  </div>
+
+
+{% endblock %}

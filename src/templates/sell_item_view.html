@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block navbar %}
+<div class="topnav">
+  		<a   href="/home/">Home</a>
+      <a   href="/item/">Popular Items</a>
+    <a  href="/about/">About</a>
+    <a class="active" href=""> Sell Item </a>
+    <a href="/top_seller_view/"> Top Sellers </a>
+</div>
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<!--===============================================================================================-->
+
+<!--===============================================================================================-->
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/main_seller.css' %}">
+	
+		
+
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" method="POST" action="/posted_item/" enctype="multipart/form-data" autocomplete="off">
+				{% csrf_token %}
+				<span class="contact100-form-title">
+					Seller Comfirmation
+				</span>
+				<h6 class="error_in_post_item">{{ msg}}</h6>
+				<div class="wrap-input100 validate-input" >
+					<input class="input100" type="email" name="email_post_item" placeholder="email">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" >
+					<input class="input100" type="password" name="password_post_item" placeholder="Password">
+					<span class="focus-input100"></span>
+				</div>
+
+				<span class="contact100-form-title">
+					Item Info
+				</span>
+				<h6 class="error_in_post_item">{{ msg2 }}</h6>
+				<div class="wrap-input100 validate-input" >
+					<input class="input100" type="text" name="item_sell_name" placeholder="Item Name">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" >
+					<input class="input100" type="text" name="item_sell_price" placeholder="Price">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" >
+					<input class="input100" type="text" name="item_sell_stock" placeholder="Stock">
+					<span class="focus-input100"></span>
+				</div>
+				
+				<div class="wrap-input100 validate-input" >
+					<textarea class="input100" name="item_sell_des" placeholder="Description"></textarea>
+					<span class="focus-input100"></span>
+				</div>
+				<div class="wrap-input100 validate-input" >
+					<input class="input100" type="text" name="item_sell_condit" placeholder="Condition(good, bad, new?)">
+					<span class="focus-input100"></span>
+				</div>
+				<div class="wrap-input100 validate-input" >
+					<h4>****Please Choose an Image</h4>
+
+					<input type="file" name="myFile"  >
+					
+				</div>
+				<h2>Select categories: </h2>
+				<input type="checkbox" name="checks" value="Electronical"> Electronical<br>
+				<input type="checkbox" name="checks" value="Skin_care"> Skin care<br>
+				<input type="checkbox" name="checks" value="Food"> Food<br>
+				<input type="checkbox" name="checks" value="Daily"> Daily<br>
+				<input type="checkbox" name="checks" value="Drink"> drink <br>
+				<input type="checkbox" name="checks" value="other" checked> other <br>
+
+				
+				
+				
+
+
+				<div class="container-contact100-form-btn">
+					<button class="contact100-form-btn">
+						Post Item
+					</button>
+				</div>
+			</form>
+
+		
+		</div>
+
+
+
+
+
+
+
+{% endblock %}

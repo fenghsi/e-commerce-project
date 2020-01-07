@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block navbar %}
+<div class="topnav">
+  		<a   href="/home/">Home</a>
+      <a   href="/item/">Popular Items</a>
+    <a  href="/about/">About</a>
+    <a href="/sell_item_view/"> Sell Item </a>
+    <a href="/top_seller_view/"> Top Sellers </a>
+</div>
+{% endblock %}
+
+
+
+{% block content %}
+	
+  <div class="shopping-carts">
+  <!-- Title -->
+  <div class="title">
+    <p>Your Shopping Cart<p>                                  
+    <p class="title_p">Total : ${{ total }}<p>
+  </div>
+  <div id="item_in_shop">
+  {%for my_sub_item in items %}
+  <!-- Product #1 -->
+  
+  <div class="item">
+    <div class="buttons">
+      <span class="delete-btn"></span>
+      <span class="like-btn"></span>
+    </div>
+ 
+    <div class="image">
+      {%for ns in newitem %}
+                {% if my_sub_item.itemid.itemid == ns.itemid  %}
+                    <img src="{%static ns.image %}" alt="" style="width:auto px;height:100"px;/>
+                {% endif %}
+            {% endfor %}
+    </div>
+ 
+    <div class="description">
+      {%for ns in newitem %}
+                {% if my_sub_item.itemid.itemid == ns.itemid  %}
+                    <span>{{ ns.name }}</span>
+                    <span>${{ ns.price }}</span>
+                {% endif %}
+      {% endfor %}
+    </div>
+   
+    <div class="quantity">
+     
+      <a class="plus-btn" href="{% url 'decrease_item' my_sub_item.itemid.itemid  %}"><img src="plus.svg" alt="" class="fa fa-minus" alt="" /></a>
+       
+      
+
+      <input type="text" name="name" value="{{ my_sub_item.quantity}}">
+      
+       <a class="plus-btn" href="{% url 'increase_item' my_sub_item.itemid.itemid  %}"><img src="plus.svg" alt="" class="fa fa-plus" alt="" /></a>
+       </div>
+        
+     <div class="total-price">Total: ${{ my_sub_item.price }}</div>
+  </div>
+  {% endfor %}
+</div>
+  <div class="check_out_div">
+    <button id="shoppincart_check_but" onclick="jump_to_proceed()" class="Check_out" >Proceed to Check Out</button>
+  </div>
+
+</div>
+
+  <div >
+    
+  <div>
+{% endblock %}
